@@ -1,0 +1,16 @@
+<nz-card style="width: 1300px; margin-top: 50px; background-color: rgb(235, 238, 238); display: flex;">
+  <div nz-row [nzGutter]="8">
+    <div nz-col [nzSpan]="10">
+      <nz-card nzHoverable style="width:340px" [nzCover]="coverTemplate">
+        <nz-card-meta [nzTitle]="destaqueModel.imgTitle" [nzDescription]="destaqueModel.imgSubtitle"></nz-card-meta>
+      </nz-card>
+      <ng-template #coverTemplate>
+        <img alt="example" [src]="destaqueModel.srcImage" />
+      </ng-template>
+    </div>
+    <div nz-col [nzSpan]="13" style="margin-top: 100px;">
+      <h1 style="font-size: 1.5cm;">{{destaqueModel.title}}</h1>
+      <h2 style="color: rgb(7, 129, 129);">{{destaqueModel.description}}</h2>
+    </div>
+  </div>
+</nz-card>

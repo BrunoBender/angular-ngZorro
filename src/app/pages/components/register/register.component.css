@@ -1,0 +1,62 @@
+[nz-form] {
+  width: 600px;
+  padding: 50px;
+}
+
+.phone-select {
+  width: 70px;
+}
+
+.register-are {
+  margin-bottom: 8px;
+}
+
+.cadastroInfo {
+  background-color: rgb(121, 177, 177);
+  width: 400px;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.cardRegister {
+  margin-top: 20px;
+  background-color: rgba(235, 235, 235, 0.671);
+  border-radius: 10px;
+  padding: 0px;
+  border: rgb(204, 201, 201);
+  border-style: solid;
+}
+
+.componetCadastroInfo{
+  height: 150px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.466);
+  border-radius: 10px;
+  border-color: rgba(255, 255, 255, 0.466);
+  padding: 0;
+}
+
+.cardSubComponet{
+  width: 140px;
+  height: 100px;
+  background-color: rgba(0, 128, 128, 0.123);
+  border-color: rgba(0, 128, 128, 0.26);
+  border-radius: 5px;
+}
+
+.circleProgress{
+  height: 180px;
+}
+
+.likesProgress{
+  height: 120px;
+}
+
+[nz-button] {
+  margin-bottom: 12px;
+  width: 290px;
+  color: rgb(107, 106, 106);
+}
+
+

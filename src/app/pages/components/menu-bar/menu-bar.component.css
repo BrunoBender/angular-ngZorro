@@ -1,0 +1,22 @@
+.layout {
+  min-height: 100vh;
+}
+
+.logo {
+  width: 290px;
+  height: 53px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px 24px 5px 0;
+  float: left;
+  padding-left: 50px;
+}
+
+.titulo{
+  text-align: center;
+  color: white;
+  font-size: 0.8cm;
+}
+
+[nz-menu] {
+  line-height: 64px;
+}

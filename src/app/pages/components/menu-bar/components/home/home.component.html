@@ -1,0 +1,26 @@
+<!-- <nz-breadcrumb style="margin: 15px;">
+  <nz-breadcrumb-item>Menu</nz-breadcrumb-item>
+  <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+</nz-breadcrumb> -->
+
+<nz-carousel nzAutoPlay [nzEffect]="effect">
+  <div nz-carousel-content *ngFor="let data of comentariosList">
+
+    <div *ngIf="data.nome == 'adm'" style="margin-top: 100px;">
+      <h3>{{ data.comentario }}</h3>
+    </div>
+
+    <div *ngIf="data.nome != 'adm'" style="margin-left: 550px; margin-right: 550px; opacity: 70%;">
+      <nz-card style="border-radius: 20px;" [nzTitle]="data.nome">
+        <p>{{data.comentario}}</p>
+      </nz-card>
+    </div>
+
+  </div>
+</nz-carousel>
+
+<div *ngFor="let data of homeList">
+  <app-destaque [destaqueModel]="data.destaque"  style="display: flex; flex-direction: row; justify-content: center;"></app-destaque>
+
+  <app-designer-destaque [designerModel]="data.designer" style="display: flex; flex-direction: row; justify-content: center;"></app-designer-destaque>
+</div>

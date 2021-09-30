@@ -1,0 +1,139 @@
+<div nz-row nzJustify="space-around">
+  <div nz-col nz-span="8">
+    <nz-card class="cardRegister">
+    <form nz-form [formGroup]="validateForm" nzLayout="vertical" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-control nzErrorTip="Não é um Email válido!">
+          <input nz-input formControlName="email" id="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label  nzFor="password" nzRequired>Senha</nz-form-label>
+        <nz-form-control  nzErrorTip="Por favor, insira sua senha!">
+          <input nz-input type="password" id="password" formControlName="password"
+            (ngModelChange)="updateConfirmValidator()" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label  nzFor="checkPassword" nzRequired>Confirme sua senha</nz-form-label>
+        <nz-form-control  [nzErrorTip]="errorTpl">
+          <input nz-input type="password" formControlName="checkPassword" id="checkPassword" />
+          <ng-template #errorTpl let-control>
+            <ng-container *ngIf="control.hasError('required')">Por favor, confirme sua senha!</ng-container>
+            <ng-container *ngIf="control.hasError('confirm')">
+              Senhas não coincidem
+            </ng-container>
+          </ng-template>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label nzFor="nickname" nzRequired
+          nzTooltipTitle="Como você quer ser chamado?">
+          <span>Nome de Usuário</span>
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Por favor, informe seu nome de usuário!">
+          <input nz-input id="nickname" formControlName="nickname" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label  nzFor="datePicker" nzRequired>Data de nascimento</nz-form-label>
+        <nz-form-control  nzErrorTip="Por favor, informe sua data de nascimento!">
+          <nz-date-picker formControlName="datePicker" id="'datePicker'"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label  nzFor="phoneNumber" nzRequired>Número de telefone</nz-form-label>
+        <nz-form-control  [nzValidateStatus]="validateForm.controls['phoneNumber']"
+          nzErrorTip="Por favor, insira seu número de telefone!">
+          <input formControlName="phoneNumber" id="'phoneNumber'" nz-input />
+        </nz-form-control>
+      </nz-form-item>
+      <!-- <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="website" nzRequired>Website</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="Please input website!">
+          <input nz-input id="website" formControlName="website" placeholder="website" />
+        </nz-form-control>
+      </nz-form-item> -->
+
+      <nz-form-item>
+        <nz-form-label>
+          <!-- <nz-row>
+            <nz-col nzSpan="12">
+              <nz-slider [nzMin]="1" [nzMax]="20" [(ngModel)]="value1"></nz-slider>
+            </nz-col>
+            <div nz-col nzSpan="4">
+              <nz-input-number
+                [nzMin]="1"
+                [nzMax]="20"
+                [ngStyle]="{ marginLeft: '16px' }"
+                [(ngModel)]="value1"
+              ></nz-input-number>
+            </div>
+          </nz-row> -->
+        </nz-form-label>
+        <nz-form-control>
+
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row class="register-area">
+        <nz-form-control>
+          <button nz-button nzType="primary" style="width: 100%;">Register</button>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+  </nz-card>
+  </div>
+  <div nz-col nz-span="8" class="cadastroInfo">
+    <h1 style="
+    color: rgb(15, 56, 46); font-size: 0.9cm;">Cadastre - se agora mesmo!</h1>
+    <nz-card class="componetCadastroInfo likesProgress">
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-statistic [nzValue]="(1128 | number)!" [nzTitle]="'Feedback'" [nzPrefix]="prefixTpl"></nz-statistic>
+          <ng-template #prefixTpl>Likes</ng-template>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-statistic [nzValue]="93" [nzTitle]="'Unmerged'" [nzSuffix]="'/ 100'"></nz-statistic>
+        </nz-col>
+      </nz-row>
+    </nz-card>
+
+    <nz-card class="componetCadastroInfo">
+      <nz-row [nzGutter]="16">
+        <nz-col [nzSpan]="12">
+          <nz-card class="cardSubComponet">
+            <nz-statistic
+              [nzValue]="(this.aprovacao | number: '1.0-2')!"
+              [nzTitle]="'Aprovação'"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#3F8600' }"
+            ></nz-statistic>
+          </nz-card>
+        </nz-col>
+        <nz-col [nzSpan]="12">
+          <nz-card class="cardSubComponet">
+            <nz-statistic
+              [nzValue]="(this.desaprovacao | number: '1.0-2')!"
+              [nzTitle]="'Desaprovação'"
+              [nzSuffix]="'%'"
+              [nzValueStyle]="{ color: '#CF1322' }"
+            ></nz-statistic>
+          </nz-card>
+        </nz-col>
+      </nz-row>
+    </nz-card>
+
+    <nz-card class="componetCadastroInfo">
+      <nz-progress [nzPercent]="30"></nz-progress>
+      <nz-progress [nzPercent]="50" nzStatus="active"></nz-progress>
+      <nz-progress [nzPercent]="70" nzStatus="exception"></nz-progress>
+      <nz-progress [nzPercent]="100"></nz-progress>
+    </nz-card>
+
+    <nz-card class="componetCadastroInfo circleProgress">
+      <nz-progress [nzPercent]="75" nzType="circle" [nzFormat]="formatOne"></nz-progress>
+    </nz-card>
+  </div>
+</div>

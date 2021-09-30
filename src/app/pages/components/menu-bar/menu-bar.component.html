@@ -1,0 +1,15 @@
+<div *ngIf="this.mostrarMenu">
+  <div class="logo"> <a routerLink="/home"><span class="titulo">Oficina da Moda</span></a></div>
+  <ul nz-menu nzTheme="dark" nzMode="horizontal">
+    <li nz-menu-item><a routerLink="/home"></a>Home</li>
+    <li nz-menu-item><a routerLink="/login"></a>Login</li>
+    <li nz-menu-item><a routerLink="/produtos"></a>Produtos</li>
+    <!-- <li nz-menu-item><a href="/conta"></a>Conta</li> -->
+    <li nz-menu-item><a routerLink="/sobre"></a>Sobre</li>
+      <nz-badge [nzCount]="5" style="left: 55%">
+        <nz-avatar nzIcon="user" [nzShape]="'square'" nzSrc="/assets/imagens/designer1.jpg">
+        </nz-avatar>
+      </nz-badge>
+  </ul>
+</div>
+<router-outlet></router-outlet>

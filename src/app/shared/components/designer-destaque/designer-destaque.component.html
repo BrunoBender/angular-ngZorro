@@ -1,0 +1,33 @@
+<nz-card style="width: 1300px; height: 340px; margin-top: 30px; background-color: rgb(235, 238, 238);">
+  <div nz-row nzJustify="space-between" style="width: 1250px;">
+    <div nz-col [nzSpan]="16" style="margin-top: 5px;">
+      <h1 style="font-size: 1.0cm;">Designer responsável</h1>
+      <h2 style="color: rgb(7, 129, 129);">{{designerModel.nome}}</h2>
+
+      <div style="background: #ECECEC;">
+        <div nz-row [nzGutter]="8">
+          <div nz-col [nzSpan]="8">
+            <nz-card nzTitle="Autorias">
+              <p>{{designerModel.autorias}}</p>
+            </nz-card>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-card nzTitle="Avaliações">
+              <p>{{designerModel.avaliacoes}}</p>
+            </nz-card>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-card nzTitle="Tempo de Carreira">
+              <p>{{designerModel.tempoCarreira}}</p>
+            </nz-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div nz-col [nzSpan]="5.5">
+      <img style="width: 300px; height: 300px; background-color: rgb(74, 134, 134); border-radius: 150px;" [src]="designerModel.srcFoto">
+    </div>
+  </div>
+
+</nz-card>
+
